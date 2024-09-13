@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="./media/unnamed.png" type="image/x-icon">
+    <link rel="stylesheet" href="./css/main.css" />
+    <title>BMI</title>
+  </head>
+  <body class="flex flex-col justify-evenly items-center h-[100vh] font-dana">
+    <div
+      class="relative w-[90%] h-[90%] md:w-[80%] lg:w-[80%] lg:h-[90vh] xl:w-[65%] 2xl:w-[50%] rounded-[15px] bg-gradient-to-l from-[#55e6d8] to-[#4817f9] flex flex-col lg:flex-row justify-center items-center"
+    >
+      <div
+        class="w-[100%] h-[18%] lg:w-[50%] lg:h-full text-center flex flex-col justify-center items-center"
+      >
+        <img
+          src="./media/BMI_logo.svg.png"
+          class="w-[40%] md:w-[30%] lg:w-[50%]"
+          alt=""
+        />
+      </div>
+      <div
+        class="w-[100%] h-[82%] lg:w-[50%] lg:h-full flex flex-col items-center justify-around"
+      >
+        <p class="text-white text-[30px]">محاسبه شاخص توده بدن</p>
+
+        <form
+          class="w-full flex flex-col justify-center items-center lg:items-end lg:pr-10 gap-y-1"
+          action=""
+        >
+          <label
+            for="f-name"
+            class="text-[#015491] text-[20px] block w-[60%] text-right"
+            >:نام</label
+          >
+          <input
+            type="text"
+            name=""
+            id="f-name"
+            placeholder="مثال : امیرحسین"
+            class="w-[60%] h-[40px] rounded-xl placeholder:float-right focus:outline-none focus:border-[2px] focus:border-[#953ffe] pr-2   "
+          />
+        </form>
+        <form
+          class="w-full flex flex-col justify-center items-center lg:items-end lg:pr-10 gap-y-1"
+          action=""
+        >
+          <label
+            for="l-name"
+            class="text-[#015491] text-[20px] block w-[60%] text-right"
+            >:نام خانوادگی</label
+          >
+          <input
+            type="text"
+            name=""
+            id="l-name"
+            placeholder="مثال : فخاری"
+            class="w-[60%] h-[40px] rounded-xl placeholder:float-right pr-2 focus:outline-none focus:border-[2px] focus:border-[#953ffe]"
+          />
+        </form>
+        <form
+          class="w-full flex flex-col justify-center items-center lg:items-end lg:pr-10 gap-y-1"
+          action=""
+        >
+          <label
+            for="ghad"
+            class="text-[#015491] text-[20px] block w-[60%] text-right"
+            >:قد</label
+          >
+          <input
+            type="text"
+            name=""
+            id="ghad"
+            placeholder="مثال : 185 (سانتی متر)   "
+            class="w-[60%] h-[40px] rounded-xl placeholder:float-right pr-2 focus:outline-none focus:border-[2px] focus:border-[#953ffe]"
+          />
+        </form>
+        <form
+          class="w-full flex flex-col justify-center items-center lg:items-end lg:pr-10 gap-y-1"
+          action=""
+        >
+          <label
+            for="vazn"
+            class="text-[#015491] text-[20px] block w-[60%] text-right"
+            >:وزن</label
+          >
+          <input
+            type="text"
+            name=""
+            id="vazn"
+            placeholder="مثال : 100 (کیلو گرم)"
+            class="w-[60%] h-[40px] rounded-xl placeholder:float-right pr-2 focus:outline-none focus:border-[2px] focus:border-[#953ffe]"
+          />
+        </form>
+
+        <div class="w-full flex justify-center">
+          <button
+            type="button"
+            id="submit"
+            class="w-[40%] text-center h-10 bg-gradient-to-t from-[#58e376] to-[#0af3d4] rounded-xl text-white text-[20px]"
+          >
+            ثبت
+          </button>
+        </div>
+      </div>
+
+      <!-- answer page -->
+      <div
+        class="hidden w-full h-full absolute rounded-[15px] flex-col justify-evenly items-center bg-gradient-to-r from-[#292d4e] to-[#3f11e5]"
+        id="user-answer-con"
+      >
+        <div id="name-user-show" class="text-white text-[20px] lg:text-[30px] font-bold">
+
+        </div>
+
+        <div class="w-[90%] h-[17%] flex flex-col">
+          <div
+            class="w-full h-[50%] text-white text-[17px] flex justify-center items-center lg:text-[23px]"
+          >
+            <p>: شما با مشخصات</p>
+          </div>
+          <div
+            class="w-full h-[50%] flex justify-between items-center text-white text-[17px] lg:text-[23px]"
+          >
+            <p id="vazn-h"></p>
+            <p id="ghad-h"></p>
+          </div>
+        </div>
+
+        <div class="w-[90%] h-[50%]">
+          <div
+            class="w-full h-[20%] flex justify-center items-center text-white text-[17px] lg:text-[23px]" 
+            id="bmi-value-show"
+          >
+        
+          </div>
+          <div
+            class="w-full h-[80%] flex justify-center items-center text-white text-[20px] lg:text-[30px] font-bold border-[4px] "
+            id="bmi-screen-show"
+          >
+              </div>
+        </div>
+
+        <div class="w-full h-[12%] flex justify-center items-center">
+          <input
+            type="button"
+            value="امتحان مجدد"
+            id="try-Btn"
+            class="w-[130px] h-[40px] cursor-pointer rounded-2xl bg-gradient-to-t from-[#6e4ac7] to-[#0239dd] text-white"
+          />
+        </div>
+      </div>
+    </div>
+
+    <p class="text-[11px] hover:scale-105">**Design By Amirhossein Fakhari**</p>
+  </body>
+
+  <script src="./js/script.js"></script>
+</html>
